@@ -1,0 +1,96 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Articulos App</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  </head>
+
+  <body>
+
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" th:href="@{/}">Articulos</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+    </header>
+
+    <br>
+    <br>
+    <main role="main">     
+      <hr>
+      <div class="container"> 
+
+        <div class="card">
+          <h4 class="card-header"><strong>Datos del Articulo</strong></h4>              
+          <div class="card-body">
+          
+          
+          <!-- Inicio formulario -->
+            <form action="/save" method="post">              
+              <div class="row">
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input th:if="${objeto!=null}" type="hidden" th:field="*{objeto.id}">
+                    <input th:if="${objeto!=null}" th:value=${objeto.nombre} type="text" class="form-control" id="nombre" name="nombre" required="required">
+                    <input th:unless="${objeto!=null}" type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre del articulo" required="required">
+                  </div>
+                </div>
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="descripcion">Precio</label>
+                    <input th:if="${objeto!=null}" th:value=${objeto.precio} type="text" class="form-control" id="precio" name="precio" required="required">
+                    <input th:unless="${objeto!=null}" type="text" class="form-control" id="precio" name="precio" placeholder="Precio del articulo" required="required">
+                  </div> 
+                </div> 
+                <div class="col-md-3">
+                  <label for="marca">Marca</label>
+                  <input th:if="${objeto!=null}" th:value="${objeto.marca}" type="text" class="form-control" id="marca" name="marca"  required="required">
+                  <input th:unless="${objeto!=null}" type="text" class="form-control" id="marca" name="marca" placeholder="Marca del articulo" required="required">
+                </div>   
+              </div>    
+            
+              <hr>
+              <div class="row">
+                <div class="col-md-9"> 
+                  <div class="form-group">
+                    <label for="detalles"><strong>Descripción</strong></label>
+                    <textarea th:if="${objeto!=null}" class="form-control" name="descripcion" id="descripcion" rows="7">[[${objeto.descripcion}]]</textarea>          
+                    <textarea th:unless="${objeto!=null}" class="form-control" name="descripcion" id="descripcion" rows="7"></textarea>
+                  </div> 
+                </div> 
+                
+              </div> 
+              <button type="submit" class="btn btn-primary">Guardar</button>  
+            </form>
+          </div>
+        </div>
+      </div> <!-- /container -->
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+          &copy; 2023 ArticulosApp  | WebApp Desarrollada con Spring Boot | Autor: Edgardo Velasco| &middot; <a href="#">Privacy</a>
+          &middot; <a href="#">Terms</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+      
+  </body>
+</html>

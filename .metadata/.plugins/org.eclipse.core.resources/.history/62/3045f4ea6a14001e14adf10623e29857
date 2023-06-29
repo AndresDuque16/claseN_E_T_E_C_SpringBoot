@@ -1,0 +1,14 @@
+package co.netec.app.controller;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class AlumnoController {
+	
+	@PostMapping("/alumno")
+	public Alumno guardar() {
+		return null;
+	}
+
+}

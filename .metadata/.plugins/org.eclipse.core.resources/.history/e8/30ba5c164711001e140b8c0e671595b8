@@ -1,0 +1,23 @@
+package co.netec.app.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+
+import co.netec.app.dao.IArticuloDAO;
+
+@Controller
+public class HomeController {
+
+	@Autowired
+	private IArticuloDAO servicio;
+	
+	public String inicio (Model modelo) {
+		
+		List<Articulo> listarArticulos = servicio.findAll();
+		modelo.addAttribute("articulos", listarArticulos);
+		return "listArticulos";
+	}
+	
+	
+}

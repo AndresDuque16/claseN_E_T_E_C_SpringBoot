@@ -1,0 +1,21 @@
+package co.netec.app.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import co.netec.app.service.IAlumnoService;
+
+@RestController
+public class AlumnoController {
+	
+	@Autowired
+	private IAlumnoService servicio;
+	
+	
+	@PostMapping("/alumno")
+	public Alumno guardar() {
+		return null;
+	}
+
+}

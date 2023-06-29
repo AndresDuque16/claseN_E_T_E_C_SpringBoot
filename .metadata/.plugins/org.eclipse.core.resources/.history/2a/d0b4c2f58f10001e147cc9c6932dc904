@@ -1,0 +1,5 @@
+package co.netec.app.service;
+
+public class ArticuloServiceImpl implements IArticuloService{
+	
+}

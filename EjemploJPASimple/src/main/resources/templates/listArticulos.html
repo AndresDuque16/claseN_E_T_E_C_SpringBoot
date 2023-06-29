@@ -1,0 +1,79 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Articulos App|Listado de datos MySQL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Articulos</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+    </header>
+
+    <main role="main">
+      <hr>
+      <div class="container">
+        <br>
+        <br>
+        <div class="card">
+          <h4 class="card-header"><strong>Listado de Articulos MySQL</strong></h4>
+          <div class="card-body">
+
+            <hr>
+			<table class="table table-hover">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Imagen</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Descripci&oacuten</th>
+                  <th scope="col">Precio</th>
+                </tr>
+              </thead>
+              <tbody>
+				<tr th:each="tmp: ${articulos}">
+					<td>
+						<img th:src="@{/images/{img} (img=${tmp.imagen})}" width="100" height="100">
+					</td>
+					<td>[[${tmp.nombre}]]</td>	
+					<td>[[${tmp.descripcion}]]</td>	
+					<td>[[${tmp.precio}]]</td>	
+
+              </tbody>
+            </table>
+
+
+
+          </div>
+        </div>
+      </div> <!-- /container -->
+
+    </main>
+    <br>
+    <br>
+    <footer class="footer">
+      <div class="container">
+        <p>
+          &copy; 2021 Articulos app, Inc. | WebApp Desarrollada con Spring Boot | Autor: Edgardo Velasco | &middot; <a href="#">Privacy</a>
+          &middot; <a href="#">Terms</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  </body>
+</html>

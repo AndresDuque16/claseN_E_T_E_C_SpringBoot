@@ -1,0 +1,13 @@
+package co.netec.app.entities;
+
+public class Articulo {
+	
+	private int id;
+	private String nombre;
+	private String marcr;
+	private String descripcion;
+	private double precio;
+	
+	
+
+}

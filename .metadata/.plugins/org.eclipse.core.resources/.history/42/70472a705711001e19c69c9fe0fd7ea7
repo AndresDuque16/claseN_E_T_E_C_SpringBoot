@@ -1,0 +1,10 @@
+package co.netec.app.entities;
+
+public class Alumno {
+private int id; 
+private String nombre;
+ private int edad;
+ private String correo;
+ 
+ 
+}

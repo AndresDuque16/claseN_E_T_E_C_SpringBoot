@@ -1,0 +1,10 @@
+package co.netec.app.service;
+
+import java.util.List;
+
+import co.netec.app.entities.Alumno;
+
+public interface IAlumnoService {
+ public void save(Alumno alumno);
+ public List<Alumno> findALL()
+}

@@ -1,0 +1,5 @@
+package co.netec.app.controller;
+
+public class AlumnoController {
+
+}

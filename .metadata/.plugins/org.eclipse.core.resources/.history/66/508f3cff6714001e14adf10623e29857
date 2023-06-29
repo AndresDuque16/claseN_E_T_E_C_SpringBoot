@@ -1,0 +1,5 @@
+package co.netec.app.service;
+
+public interface IAlumnoService {
+ public void save(Alumno alumno);
+}
